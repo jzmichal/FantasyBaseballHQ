@@ -1,0 +1,59 @@
+1) An overview of the function of the code (i.e., what it does and what it can be used for)
+  From a far, the main goal of the code is to scrape the most relevant data from the web across baseball websites
+  and present them to the user all in one place. Often times when I'm working on fantasy, I have to spend time going
+  through many different websites, scrolling through irrelevant information (football, basketball, soccer, etc)
+  just to find what I want. Additionally, most websites aren't going to display other websites information, and a lot of
+  the time just looking at one won't give you all relevant and useful information out there. I'll find myself relying on
+  one, and then the next day I figure out that there was a couple of things that I wasn't aware of because the one that
+  I looked at didn't have all relevant information to me. If I could combine the best parts of every website and put it
+  into one place, that would greatly simplify everything for me.
+
+ 2) Documentation of how the software is implemented with sufficient detail so that others can have a basic understanding 
+  of your code for future extension or any further improvement. 
+
+  The code can be broken down into three main files, index.html, app.py, and index.javascript.
+  app.py is a python file in charge of scraping the data. It scrapes from 5 different websites, 
+  baseballsavant.mlb.com, https://www.rotoballer.com/mlb, https://www.fantasypros.com/mlb/, 
+  https://www.fangraphs.com/, and https://theathletic.com/mlb/. These all have relevant fantasy information
+  but in different formats and from different perspectives. App.py scrapes relevant fantasy stories from 
+  each of them, while attempting to normalize all of the different formats.
+
+  index.html is the underlying logic and skeleton for the webpage. It defines the layout and how to display things.
+  index.js does the actual work of grabbing the data from app.py and figuring out how to translate it into html
+  speak so that it can be displayed properly. For some reason, getting index.js to grab the data sent from flask 
+  and display it within the index.html was very difficult, so much of the logic from index.js is inside of the .html 
+  file.
+
+3) Documentation of the usage of the software including either documentation of usages of APIs or detailed instructions on 
+  how to install and run a software, whichever is applicable. 
+
+  There are no APIs being used, but it is all scraped from different websites, which made things much more difficult 
+  than expected since each website returned much different formatting, making it a lot harder to retrieve data from 
+  certain websites where the formatting was not user friendly. In order to run the software, several dependencies are 
+  necessary:
+  pip3
+  python3
+  flask
+  bs4 
+  json
+  requests
+
+  Once you have python3 and pip3 installed locally, you can install the dependencies that follow it relatively easily by
+  "pip3 install flask" where flask is our example and you can interchange that with the other dependencies. If you have
+  and are familiar with anaconda, you can also set up an anaconda environment and install everything that way, though
+  not necessary.
+  
+  Summary
+  I was not in a team so all of the work was done by me. I definitely underestimated how much times things would take me 
+  and what would be the biggest hurdles. As stated before, the most difficult part was definitely the different formatting
+  each website gave back when scraped. Some were just total garbage and impossible to parse, making it really frustrating
+  because there is a lot of relevant and fun ideas I had that I wanted to display which were just too time consuming to 
+  complete within the time frame. Additionally, I don't have much experience as a web developer. Figuring out how to connect
+  javascript with html with python was a bit more time consuming than I had imagined, as well as displaying everything in
+  a UI-friendly way. 
+
+  If I had more time I would definitely focus first on displaying the information in a more organized manner. CSS could be
+  utilized to make things a lot prettier. Additionally, you can see that there is a link for more websites to display their 
+  information than just the one. I would have figured out how to format everything uniformally so that a user could go in 
+  between each of them, as well as use the search bar at the top to search the whole website.
+  
